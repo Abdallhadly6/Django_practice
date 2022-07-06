@@ -7,6 +7,8 @@ class CustomStudent (admin.ModelAdmin):
 			["Student Information" , {"fields" : ["fname","lname","age"]}],
 			["Scholarship Information" , {"fields" : ["student_track"]}] )
     list_display = ('fname' , 'lname' , 'age' , 'student_track' , 'is_graduated')
+    list_filter  = ['student_track']
+    search_fields  = ['student_track__name' , 'fname']
 class InlineStudent (admin.StackedInline):
     model = Student
     extra = 2
