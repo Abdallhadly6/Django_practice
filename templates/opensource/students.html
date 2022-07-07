@@ -8,6 +8,7 @@
         <th scope="col">age</th>
         <th scope="col">Track</th>
         <th scope="col">Is Graduated</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
         <td>{{st.age}}</td>
         <td>{{st.student_track}}</td>
         <td>{{st.is_graduated}}</td>
+        <td><a href = "edit/{{st.id}}">Edit</a></td>
       </tr>
     {%endfor%}
     </tbody>

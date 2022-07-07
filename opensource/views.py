@@ -25,3 +25,14 @@ def newStudent(request):
         form = StudentForm()
     context = {'form' : form}
     return render(request , 'opensource/new_student.html' , context)
+
+def editStudent(request , st_id):
+    st = Student.objects.get(id = st_id)
+    st_form = StudentForm(instance=st)  # fully with data of student
+    if request.method=="POST":
+        st_form = StudentForm(request.POST , instance=st)
+        if st_form.is_valid():
+            st_form.save()
+            return HttpResponseRedirect('/opensource/all')
+    context = {'form' : st_form}
+    return render(request , 'opensource/new_student.html' , context)
