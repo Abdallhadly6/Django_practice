@@ -1,0 +1,17 @@
+<h1> All Students </h1>
+<table>
+    <tr>
+      <th>First Name</th>
+      <th>last Name</th>
+      <th>age</th>
+      <th>Is Graduated</th>
+    </tr>
+    {%for st in students%}
+    <tr>
+      <td>{{st.fname}}</td>
+      <td>{{st.lname}}</td>
+      <td>{{st.age}}</td>
+      <td>{{st.is_graduated}}</td>
+    </tr>
+    {%endfor%}
+  </table>
