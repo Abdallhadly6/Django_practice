@@ -36,3 +36,9 @@ def editStudent(request , st_id):
             return HttpResponseRedirect('/opensource/all')
     context = {'form' : st_form}
     return render(request , 'opensource/new_student.html' , context)
+
+def deleteStudent (request , st_id):
+    st = Student.objects.get(id = st_id)
+    st.delete()
+    return HttpResponseRedirect('/opensource/all')
+

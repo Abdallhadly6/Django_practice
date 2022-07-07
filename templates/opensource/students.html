@@ -8,7 +8,7 @@
         <th scope="col">age</th>
         <th scope="col">Track</th>
         <th scope="col">Is Graduated</th>
-        <th scope="col">Actions</th>
+        <th scope="col" colspan="2">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +20,7 @@
         <td>{{st.student_track}}</td>
         <td>{{st.is_graduated}}</td>
         <td><a href = "edit/{{st.id}}">Edit</a></td>
+        <td><a href = "delete/{{st.id}}">delete</a></td>
       </tr>
     {%endfor%}
     </tbody>

@@ -6,4 +6,5 @@ urlpatterns = [
     path('all', views.getAllStudents),
     path('new', views.newStudent),
     path('edit/<st_id>', views.editStudent),
+    path('delete/<st_id>', views.deleteStudent),
 ]
