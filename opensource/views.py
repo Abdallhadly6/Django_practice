@@ -5,7 +5,8 @@ from . models import Student , Track
 
 def getStudent (request , st_id):
     st = Student.objects.get(id = st_id)
-    return HttpResponse("<h1>Student name : </h1>" + st.fname)
+    context = {'st' : st}
+    return render(request , 'opensource/student_details.html' , context)
 
 def getAllStudents (request):
     all_stedents = Student.objects.all()
