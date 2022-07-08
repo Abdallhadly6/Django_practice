@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from django.http import HttpRequest, HttpResponse , HttpResponseRedirect
 from . models import Student , Track
-from .forms import StudentForm , TrackForm
+from .forms import StudentForm , TrackForm 
 # Create your views here.
 
 def getStudent (request , st_id):
@@ -19,7 +19,7 @@ def newStudent(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/opensource/all')
+            return HttpResponseRedirect('/opensource/all') # routing using url static
         
     else:
         form = StudentForm()
@@ -33,7 +33,7 @@ def editStudent(request , st_id):
         st_form = StudentForm(request.POST , instance=st)
         if st_form.is_valid():
             st_form.save()
-            return HttpResponseRedirect('/opensource/all')
+            return HttpResponseRedirect('/opensource/all') # routing using url name where (name) of url project and (edit) of url app
     context = {'form' : st_form}
     return render(request , 'opensource/new_student.html' , context)
 
